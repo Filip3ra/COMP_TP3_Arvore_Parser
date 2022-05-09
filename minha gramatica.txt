@@ -1,0 +1,78 @@
+S -> BLC_MAIN 
+BLC_MAIN -> fn main ( PAR ) { CD } BLC
+BLC -> fn ID ( PAR ) { CD } BLC
+BLC ->
+PAR -> ID : TIPO PR
+PAR ->
+PR ->
+PR -> , PAR
+TIPO -> i8
+TIPO -> i16
+TIPO -> i32
+TIPO -> i64
+TIPO -> i128
+TIPO -> isize
+TIPO -> u8
+TIPO -> u16
+TIPO -> u32
+TIPO -> u64
+TIPO -> u128
+TIPO -> usize
+TIPO -> f32
+TIPO -> f64
+TIPO -> ()
+TIPO -> char
+TIPO -> str
+TIPO -> bool
+TIPO -> never
+CD -> INST
+CD ->
+INST -> INST_IF
+INST -> INST_WL
+INST -> INST_VAR
+INST -> return EXP PV
+INST -> EXP PV
+INST -> ID = EXP ;
+INST -> CHAMA_FUNC
+INST -> ACESSA_VET
+ACESSA_VET -> ID [ NUM ] PV AV
+AV ->
+AV -> INST
+PV -> ;
+PV ->
+CHAMA_FUNC -> ID ( EXP EP ) ; CF
+CHAMA_FUNC -> EXP ID ( PAR ) ; CF
+EP -> , EXP
+EP ->
+CF ->
+CF -> INST
+INST_IF -> if EXP { CD } IN
+INST_IF -> if ID ( EXP EP ) { CD } IN
+IN -> else if ID ( EXP EP ) { CD } IN
+IN -> else if EXP { CD } IN
+IN -> else { CD } IN
+IN ->
+IN -> INST
+INST_WL -> while ( EXP ) { CD } R
+R ->
+R -> INST
+INST_VAR -> let ID ; IV
+INST_VAR -> let ID = EXP ; IV
+INST_VAR -> let ID : = TIPO NUM ; IV
+INST_VAR -> let ID : [ TIPO ; NUM ] = [ NUM , NUM ] ; IV
+INST_VAR -> let ID : [ TIPO ; ID ] = [ VALOR ] ; IV
+VALOR -> NUM MV
+MV -> , VALOR
+MV ->
+IV ->
+IV -> INST
+EXP -> EXP + T
+EXP -> EXP - T
+EXP -> T
+T -> T * F
+T -> T / F
+T -> T % F
+T -> F
+F -> ID
+F -> NUM
+F -> ( EXP )

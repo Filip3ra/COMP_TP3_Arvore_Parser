@@ -18,7 +18,7 @@ vector<Comando*> Comando::extrai_lista_comandos(No_arv_parse* no) {
 
 Comando* Comando::extrai_comando(No_arv_parse* no) {
   // C. 12) C -> ID = E ; 13) C -> { LV LC }
-  if (no->regra == 12) { //12) C -> ID = E ;                                 
+  if (no->regra == 12) { //12) C -> ID = E ;
     ComandoAtribuicao* res12 = new ComandoAtribuicao();
     res12->esquerda = ID::extrai_ID(no->filhos[0]);
     res12->direita = Expressao::extrai_expressao(no->filhos[2]);

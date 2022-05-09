@@ -31,9 +31,11 @@ int main(int argc, char * argv[]) {
     nome_tab_lr1 = string(argv[2]);
   }
 
+
   ifstream arq_gramatica(nome_gramatica);
   ifstream arq_tabela_lr1(nome_tab_lr1);
-  if (arq_tabela_lr1.fail() || arq_gramatica.fail()) {
+
+  if (arq_tabela_lr1.fail() || arq_gramatica.fail()) {  // caso de falha ao abrir o arquivo
     cerr << "Falha ao abrir arquivos: " << 
       ((arq_gramatica.fail()) ? nome_gramatica : "") << ", " << 
       ((arq_tabela_lr1.fail()) ? nome_tab_lr1 : "") << endl;
