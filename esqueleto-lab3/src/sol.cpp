@@ -1,8 +1,8 @@
-#include <algorithm>
+#include<algorithm>
 #include<vector>
 #include<string>
 #include<iostream>
-#include <fstream>   
+#include<fstream>   
 #include<sstream>
 #include<map>
 #include<stack>
